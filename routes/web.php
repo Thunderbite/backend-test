@@ -2,8 +2,8 @@
 
 Route::prefix('backstage')->middleware('setActiveCampaign')->group(function () {
     // Account activation
-    Route::get('activate/{ott}', 'Auth\ActivateAccountController@index')->name('backstage.activate.show');
-    Route::put('activate/{ott}', 'Auth\ActivateAccountController@update')->name('backstage.activate.update');
+    Route::get('activate/{ott}', [Auth\ActivateAccountController::class, 'index'])->name('backstage.activate.show');
+    Route::put('activate/{ott}', [Auth\ActivateAccountController::class, 'update'])->name('backstage.activate.update');
 
     // Authentication
     Auth::routes([
@@ -11,8 +11,13 @@ Route::prefix('backstage')->middleware('setActiveCampaign')->group(function () {
     ]);
 
     Route::namespace('Backstage')->name('backstage.')->middleware('auth')->group(function () {
+
+use App\Http\Controllers\Auth;
+use App\Http\Controllers\Backstage;
+use App\Http\Controllers\FrontendController;
+use Illuminate\Support\Facades\Route;
         // Campaigns
-        Route::get('campaigns/{campaign}/use', 'CampaignsController@use')->name('campaigns.use');
+        Route::get('campaigns/{campaign}/use', [Backstage\CampaignsController::class, 'use'])->name('campaigns.use');
         Route::resource('campaigns', 'CampaignsController');
 
         // Dashboard
@@ -29,5 +34,5 @@ Route::prefix('backstage')->middleware('setActiveCampaign')->group(function () {
     });
 });
 
-Route::get('{campaign:slug}', 'FrontendController@loadCampaign');
-Route::get('/', 'FrontendController@placeholder');
+Route::get('{campaign:slug}', [FrontendController::class, 'loadCampaign']);
+Route::get('/', [FrontendController::class, 'placeholder']);
