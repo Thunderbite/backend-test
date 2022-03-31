@@ -22,7 +22,7 @@ Route::prefix('backstage')->middleware('setActiveCampaign')->group(function () {
         // Users
         Route::resource('users', 'UsersController');
 
-        Route::group(['middleware' => ['redirectIfNoActiveCampaign']], function () {
+        Route::middleware('redirectIfNoActiveCampaign')->group(function () {
             Route::resource('prizes', 'PrizesController');
             Route::resource('games', 'GamesController');
         });
