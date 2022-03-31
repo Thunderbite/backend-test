@@ -2,11 +2,11 @@
 
 namespace Tests\Feature\Backstage\Campaigns;
 
-use Tests\TestCase;
-use App\Models\User;
 use App\Models\Campaign;
-use Illuminate\Foundation\Testing\WithFaker;
+use App\Models\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 
 class EditTest extends TestCase
 {

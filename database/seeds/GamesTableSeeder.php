@@ -1,10 +1,11 @@
 <?php
+
 namespace Database\Seeders;
 
-use PDO;
-use Illuminate\Support\Facades\DB;
 use Exception;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use PDO;
 
 class GamesTableSeeder extends Seeder
 {

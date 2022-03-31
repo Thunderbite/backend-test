@@ -22,6 +22,5 @@ class RedirectIfNoActiveCampaign
         }
 
         return $next($request);
-
     }
 }

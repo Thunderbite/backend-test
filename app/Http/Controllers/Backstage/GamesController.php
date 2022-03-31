@@ -17,7 +17,6 @@ class GamesController extends BackstageController
 {
     public function __construct()
     {
-
     }
 
     /**
@@ -97,6 +96,4 @@ class GamesController extends BackstageController
     {
         //
     }
-
-
 }

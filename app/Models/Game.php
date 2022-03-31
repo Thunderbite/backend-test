@@ -41,7 +41,6 @@ class Game extends Model
             ->where('games.campaign_id', $campaign->id);
 
         return $query;
-
     }
 
     private static function filterDates($query, $campaign): void
@@ -65,6 +64,4 @@ class Game extends Model
     {
         return $this->belongsTo(Prize::class);
     }
-
-
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Backstage;
 
 use App\Models\Prize;
+
 class PrizesTable extends TableComponent
 {
     public $sortField = 'title';
@@ -14,8 +15,6 @@ class PrizesTable extends TableComponent
                 'title' => 'title',
                 'sort' => true,
             ],
-
-
 
             [
                 'title' => 'level',

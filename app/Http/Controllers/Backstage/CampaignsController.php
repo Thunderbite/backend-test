@@ -2,16 +2,14 @@
 
 namespace App\Http\Controllers\Backstage;
 
-use Carbon\Carbon;
-use App\Models\Campaign;
-use Carbon\CarbonPeriod;
 use App\Http\Requests\Backstage\Campaigns\StoreRequest;
 use App\Http\Requests\Backstage\Campaigns\UpdateRequest;
+use App\Models\Campaign;
+use Carbon\Carbon;
+use Carbon\CarbonPeriod;
 
 class CampaignsController extends BackstageController
 {
-
-
     public function __construct()
     {
         $this->authorizeResource(Campaign::class, 'campaign');
@@ -48,8 +46,8 @@ class CampaignsController extends BackstageController
      */
     public function store(Request $request)
     {
-         // Validation
-         $data = $this->validate(request(), [
+        // Validation
+        $data = $this->validate(request(), [
             'name' => 'required|unique:campaigns|max:255',
             'timezone' => 'required',
             'start_date' => 'required|date_format:Y-m-d H:i:s',

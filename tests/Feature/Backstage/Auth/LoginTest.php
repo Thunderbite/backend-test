@@ -2,9 +2,9 @@
 
 namespace Tests\Feature\Backstage\Auth;
 
-use Tests\TestCase;
 use App\Models\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Tests\TestCase;
 
 class LoginTest extends TestCase
 {

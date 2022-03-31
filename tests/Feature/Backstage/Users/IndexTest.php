@@ -2,8 +2,8 @@
 
 namespace Tests\Feature\Backstage\Users;
 
-use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Tests\TestCase;
 
 class IndexTest extends TestCase
 {

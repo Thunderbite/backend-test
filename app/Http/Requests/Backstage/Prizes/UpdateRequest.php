@@ -5,7 +5,6 @@ namespace App\Http\Requests\Backstage\Prizes;
     use Illuminate\Foundation\Http\FormRequest;
     use Illuminate\Validation\Rule;
 
-
     class UpdateRequest extends FormRequest
     {
         /**
@@ -25,7 +24,7 @@ namespace App\Http\Requests\Backstage\Prizes;
          */
         public function rules()
         {
-           return  [
+            return  [
                 'customerlevel_id'              => 'required|gt:0',
                 'prizesid.*'                    => 'required',
                 'points_band.*'                 => 'required',
@@ -36,7 +35,6 @@ namespace App\Http\Requests\Backstage\Prizes;
                 // 'nowin_popup_image'             => 'required',
                 'customer_segmentation_id.*'    => 'sometimes|required|customer_segmentation_id|gt:0',
             ];
-
         }
 
         /**
@@ -44,7 +42,8 @@ namespace App\Http\Requests\Backstage\Prizes;
          *
          * @return array Custom Validation Messages
          */
-        public function messages(){
+        public function messages()
+        {
             return [
                 'points_band.*.required'    => 'Please select the points band',
                 'message.*.required'        => 'Please fill in a message',

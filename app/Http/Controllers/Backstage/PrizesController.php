@@ -13,7 +13,6 @@ class PrizesController extends Controller
 {
     public function __construct()
     {
-
     }
 
     /**
@@ -32,7 +31,6 @@ class PrizesController extends Controller
      */
     public function create()
     {
-
         $prize = new Prize();
         // Return the view
         return view('backstage.prizes.create', compact('prize'));
@@ -45,8 +43,8 @@ class PrizesController extends Controller
      */
     public function store(StoreRequest $request)
     {
-          // Validation
-          $data = $this->validate(request(), [
+        // Validation
+        $data = $this->validate(request(), [
             'title' => 'required|max:255',
             'weight' => 'required|numeric|between:0.01,99.99',
             'startDate' => 'required|date_format:Y-m-d H:i:s',
@@ -90,10 +88,10 @@ class PrizesController extends Controller
     {
 
        // Check if the user is authorized.
-       $this->authorize('update', $prize);
+        $this->authorize('update', $prize);
 
-       // Return the view
-       return view('backstage.prizes.edit', compact('prize'));
+        // Return the view
+        return view('backstage.prizes.edit', compact('prize'));
     }
 
     /**
@@ -104,29 +102,29 @@ class PrizesController extends Controller
      */
     public function update(UpdateRequest $request, Prize $prize)
     {
-         // Check if the user is authorized.
-         $this->authorize($prize);
+        // Check if the user is authorized.
+        $this->authorize($prize);
 
-         // Validation
-         $data = $this->validate(request(), [
-             'title' => 'required|max:255',
-             'weight' => 'required|numeric|between:0.01,99.99',
-             'startDate' => 'required|date_format:Y-m-d H:i:s',
-             'endDate' => 'required|date_format:Y-m-d H:i:s',
-             'description' => 'sometimes',
-             'level' => 'required|in:low,med,high',
-         ]);
+        // Validation
+        $data = $this->validate(request(), [
+            'title' => 'required|max:255',
+            'weight' => 'required|numeric|between:0.01,99.99',
+            'startDate' => 'required|date_format:Y-m-d H:i:s',
+            'endDate' => 'required|date_format:Y-m-d H:i:s',
+            'description' => 'sometimes',
+            'level' => 'required|in:low,med,high',
+        ]);
 
-         // Add the currentPeriod to the data array.
-         $data['campaign_id'] = session('currentCampaign');
+        // Add the currentPeriod to the data array.
+        $data['campaign_id'] = session('currentCampaign');
 
-         // Create the prize
-         $prize->update($data);
+        // Create the prize
+        $prize->update($data);
 
-         // Redirect with success message
-         session()->flash('success', 'The prize has been updated!');
+        // Redirect with success message
+        session()->flash('success', 'The prize has been updated!');
 
-         return redirect('/backstage/prizes/'.$prize->id.'/edit');
+        return redirect('/backstage/prizes/'.$prize->id.'/edit');
     }
 
     /**
@@ -146,6 +144,4 @@ class PrizesController extends Controller
 
         return redirect(route('backstage.prizes.index'));
     }
-
-
 }

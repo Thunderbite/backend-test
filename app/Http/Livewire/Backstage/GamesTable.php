@@ -23,7 +23,6 @@ class GamesTable extends TableComponent
                 'sort' => true,
             ],
 
-
             [
                 'title' => 'title',
                 'attribute' => 'title',

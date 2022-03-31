@@ -2,8 +2,8 @@
 
 namespace Tests\Feature\Backstage\Dashboard;
 
-use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Tests\TestCase;
 
 class DashboardTest extends TestCase
 {

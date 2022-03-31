@@ -6,14 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Campaign extends Model
 {
-
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'timezone', 'name','slug','start_date', 'end_date'
+        'timezone', 'name', 'slug', 'start_date', 'end_date',
     ];
 
     protected $dates = ['created_at', 'updated_at', 'start_date', 'end_date'];

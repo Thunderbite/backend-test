@@ -2,13 +2,13 @@
 
 namespace Tests\Feature\Backstage\Auth;
 
-use Tests\TestCase;
 use App\Models\User;
+use Illuminate\Auth\Notifications\ResetPassword;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Notification;
-use Illuminate\Auth\Notifications\ResetPassword;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Tests\TestCase;
 
 class ForgotPasswordTest extends TestCase
 {
@@ -85,5 +85,4 @@ class ForgotPasswordTest extends TestCase
         $response->assertRedirect('backstage/password/reset');
         $response->assertSessionHasErrors('email');
     }
-
 }

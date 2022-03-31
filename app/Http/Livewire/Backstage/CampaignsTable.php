@@ -29,13 +29,11 @@ class CampaignsTable extends TableComponent
             ],
         ];
 
-
-            $columns[] = [
-                'title' => 'tools',
-                'sort' => false,
-                'tools' => ['use', 'edit', 'delete'],
-            ];
-
+        $columns[] = [
+            'title' => 'tools',
+            'sort' => false,
+            'tools' => ['use', 'edit', 'delete'],
+        ];
 
         return view('livewire.backstage.table', [
             'columns' => $columns,

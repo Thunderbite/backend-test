@@ -25,7 +25,7 @@ class UsersTable extends TableComponent
             ],
         ];
 
-        if( auth()->user()->isAdmin()) {
+        if (auth()->user()->isAdmin()) {
             $columns[] = [
                 'title' => 'tools',
                 'sort' => false,

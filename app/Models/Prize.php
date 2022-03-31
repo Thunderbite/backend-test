@@ -23,5 +23,4 @@ class Prize extends Model
     {
         return $this->hasMany(PrizeTable::class, 'prize_id');
     }
-
 }

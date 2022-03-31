@@ -10,7 +10,9 @@ use App\Models\ImportRow;
 class RowsTable extends TableComponent
 {
     public $sortField = 'created_at';
+
     public $import;
+
     public $hasSearch = false;
 
     public function mount(Import $import)

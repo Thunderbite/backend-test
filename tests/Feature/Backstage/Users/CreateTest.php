@@ -2,11 +2,11 @@
 
 namespace Tests\Feature\Backstage\Users;
 
-use Tests\TestCase;
-use Illuminate\Support\Facades\Mail;
 use App\Mail\Backstage\Users\WelcomeMail;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Support\Facades\Mail;
+use Tests\TestCase;
 
 class CreateTest extends TestCase
 {

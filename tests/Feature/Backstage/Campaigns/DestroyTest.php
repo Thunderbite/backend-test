@@ -2,10 +2,10 @@
 
 namespace Tests\Feature\Backstage\Campaigns;
 
-use Tests\TestCase;
 use App\Models\Campaign;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 
 class DestroyTest extends TestCase
 {

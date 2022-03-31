@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Backstage;
 
-    use App\Models\User;
-    use Illuminate\Support\Str;
-    use Illuminate\Http\Request;
     use App\Http\Controllers\Controller;
-    use Illuminate\Support\Facades\Mail;
-    use App\Mail\Backstage\Users\WelcomeMail;
     use App\Http\Requests\Backstage\Users\StoreRequest;
     use App\Http\Requests\Backstage\Users\UpdateRequest;
+    use App\Mail\Backstage\Users\WelcomeMail;
+    use App\Models\User;
+    use Illuminate\Http\Request;
+    use Illuminate\Support\Facades\Mail;
+    use Illuminate\Support\Str;
 
     class UsersController extends Controller
     {
