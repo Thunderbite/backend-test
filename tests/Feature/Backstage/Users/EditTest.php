@@ -49,8 +49,8 @@ class EditTest extends TestCase
         $user = create(User::class);
 
         $response = $this->put(route('backstage.users.update', $user), $attributes = [
-            'name' => $this->faker->name,
-            'email' => $this->faker->email,
+            'name' => $this->faker->name(),
+            'email' => $this->faker->email(),
         ]);
 
         $response->assertForbidden();
@@ -65,8 +65,8 @@ class EditTest extends TestCase
         $user = create(User::class);
 
         $response = $this->put(route('backstage.users.update', $user), $attributes = [
-            'name' => $this->faker->name,
-            'email' => $this->faker->email,
+            'name' => $this->faker->name(),
+            'email' => $this->faker->email(),
             'level' => 'readonly',
         ]);
 

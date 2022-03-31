@@ -50,8 +50,8 @@ class EditTest extends TestCase
         $campaign = create(Campaign::class);
 
         $response = $this->put(route('backstage.campaigns.update', $campaign), $attributes = [
-            'name' => $this->faker->userName,
-            'timezone' => $this->faker->timezone,
+            'name' => $this->faker->userName(),
+            'timezone' => $this->faker->timezone(),
         ]);
 
         $response->assertForbidden();
@@ -65,8 +65,8 @@ class EditTest extends TestCase
         $campaign = create(Campaign::class);
 
         $response = $this->put(route('backstage.campaigns.update', $campaign), $attributes = [
-            'name' => $this->faker->userName,
-            'timezone' => $this->faker->timezone,
+            'name' => $this->faker->userName(),
+            'timezone' => $this->faker->timezone(),
         ]);
 
         $this->assertDatabaseHas('campaigns', $attributes);

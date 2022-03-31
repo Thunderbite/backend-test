@@ -46,8 +46,8 @@ class CreateTest extends TestCase
         $this->signInAsAdmin();
 
         $response = $this->post(route('backstage.users.store'), $attributes = [
-            'name' => $this->faker->name,
-            'email' => $this->faker->email,
+            'name' => $this->faker->name(),
+            'email' => $this->faker->email(),
             'level' => 'readonly',
         ]);
 
