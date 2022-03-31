@@ -14,6 +14,7 @@ class Campaign extends Model
     protected $fillable = [
         'timezone', 'name', 'slug', 'start_date', 'end_date',
     ];
+
     protected $casts = [
         'start_date' => 'datetime',
         'end_date' => 'datetime',
