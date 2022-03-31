@@ -38,7 +38,7 @@ class UpdateRequest extends FormRequest
             'current_password' => [
                 'sometimes',
                 'nullable',
-                'password',
+                'current_password',
                 'required_with:password',
             ],
             'password' => [
